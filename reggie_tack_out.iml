@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module version="4">
   <component name="FacetManager">
+<<<<<<< HEAD
     <facet type="web" name="Web">
       <configuration>
         <webroots />
@@ -10,6 +11,8 @@
         </sourceRoots>
       </configuration>
     </facet>
+=======
+>>>>>>> develop
     <facet type="Spring" name="Spring">
       <configuration />
     </facet>
