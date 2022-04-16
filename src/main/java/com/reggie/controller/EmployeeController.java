@@ -1,19 +1,19 @@
 package com.reggie.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.reggie.common.R;
 import com.reggie.entity.Employee;
 import com.reggie.service.EmployeeService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.DigestUtils;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Slf4j
@@ -86,6 +86,90 @@ public class EmployeeController {
     public R<String> logout(HttpServletRequest request){
         request.getSession().removeAttribute("employee");
         return R.success("退出成功！");
+    }
+
+    /**
+     * 新增员工
+     * @param employee
+     * @return
+     */
+    @PostMapping
+    public R<String> save(HttpServletRequest request,@RequestBody Employee employee){
+        log.info("新增员工，员工信息{}",employee.toString());
+        //id=null, username=zhangsan, name=张三, password=null,
+        // phone=17358002861, sex=1, idNumber=111222333444555666,
+        // status=null, createTime=null, updateTime=null,
+        // createUser=null, updateUser=null
+        //设置初始密码：123456，但是需要进行md5的加密处理
+        //status不需要设置，因为数据库中设置了默认值 1 启用
+        employee.setPassword(DigestUtils.md5DigestAsHex("123456".getBytes()));
+
+        //设置创建和修改时间
+        employee.setCreateTime(LocalDateTime.now());
+        employee.setUpdateTime(LocalDateTime.now());
+
+        //设置创建该用户的人
+            //获得当前登陆用户的id
+        HttpSession session = request.getSession();
+        Long empId = (Long) session.getAttribute("employee");
+        employee.setCreateUser(empId);
+        employee.setUpdateUser(empId);
+
+        //调用IService 把数据保存到数据库
+        employeeService.save(employee);
+
+//        try {
+//            employeeService.save(employee);
+//        } catch (Exception e) {
+//            R.error("新增员工失败！");
+//        }
+
+        return R.success("新增员工成功！");
+    }
+
+    /**
+     * 员工信息的分页查询
+     * @param page
+     * @param pageSize
+     * @param name
+     * @return
+     */
+    @GetMapping("/page")
+    public R<Page> page(int page,int pageSize,String name){
+        log.info("page = {},pageSize = {},name = {}",page,pageSize,name);
+        //分页构造器
+        Page<Employee> pageInfo = new Page<>(page,pageSize);
+
+        //条件构造器
+        LambdaQueryWrapper<Employee> queryWrapper = new LambdaQueryWrapper<>();
+        //添加过滤条件,使用like自带的判断条件，
+        // 第一个参数：判断是否有内容，如果没有内容则不会执行like
+        queryWrapper.like(StringUtils.hasText(name),Employee::getName,name);
+        //添加排序条件
+        queryWrapper.orderByDesc(Employee::getUpdateTime);
+
+        //执行查询
+        employeeService.page(pageInfo,queryWrapper);
+
+        return R.success(pageInfo);
+    }
+
+    /**
+     * 根据id修改员工信息（基本信息以及status状态信息）
+     * @param employee
+     * @return
+     */
+    @PutMapping
+    public R<String> update(HttpServletRequest request, @RequestBody Employee employee){
+        log.info(employee.toString());//查看employee是否封装上了
+        //在更新前设置一下更新人的信息
+        employee.setUpdateTime(LocalDateTime.now());
+        employee.setUpdateUser((Long) request.getSession().getAttribute("employee"));
+
+        //进行更新
+        employeeService.updateById(employee);
+
+        return R.success("员工信息修改成功");
     }
 
 }
