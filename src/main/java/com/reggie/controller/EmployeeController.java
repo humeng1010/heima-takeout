@@ -104,20 +104,28 @@ public class EmployeeController {
         //status不需要设置，因为数据库中设置了默认值 1 启用
         employee.setPassword(DigestUtils.md5DigestAsHex("123456".getBytes()));
 
+        //============MP公共字段自动填充==============
+        //这个地方我们使用MP的字段自动填充功能：首先在实体类需要自动填充的属性上
+        // 添加@TableField(fill = FieldFill.INSERT/FieldFill.INSERT_UPDATE )
+        //然后再common包下创建数据对象处理器MyMetaObjectHandler并且实现MetaObjectHandler接口
+        //实现insertFill和updateFill方法，在方法中实现需要填充的内容，这样就可以实现每次自动填充公共字段了！！！
+
         //设置创建和修改时间
-        employee.setCreateTime(LocalDateTime.now());
-        employee.setUpdateTime(LocalDateTime.now());
+//        employee.setCreateTime(LocalDateTime.now());
+//        employee.setUpdateTime(LocalDateTime.now());
 
         //设置创建该用户的人
             //获得当前登陆用户的id
-        HttpSession session = request.getSession();
-        Long empId = (Long) session.getAttribute("employee");
-        employee.setCreateUser(empId);
-        employee.setUpdateUser(empId);
+//        HttpSession session = request.getSession();
+//        Long empId = (Long) session.getAttribute("employee");
+//        employee.setCreateUser(empId);
+//        employee.setUpdateUser(empId);
+        //========MP公共字段自动填充===========
 
         //调用IService 把数据保存到数据库
         employeeService.save(employee);
 
+        //定义全局异常控制器
 //        try {
 //            employeeService.save(employee);
 //        } catch (Exception e) {
@@ -162,14 +170,38 @@ public class EmployeeController {
     @PutMapping
     public R<String> update(HttpServletRequest request, @RequestBody Employee employee){
         log.info(employee.toString());//查看employee是否封装上了
+
+        //验证一个请求（编辑功能）是否是同一个线程
+        //long id = Thread.currentThread().getId();
+        //log.info("当前线程id为{}",id);
+        //end
+
+        //使用MP的公共字段自动填充
         //在更新前设置一下更新人的信息
-        employee.setUpdateTime(LocalDateTime.now());
-        employee.setUpdateUser((Long) request.getSession().getAttribute("employee"));
+//        employee.setUpdateTime(LocalDateTime.now());
+//        employee.setUpdateUser((Long) request.getSession().getAttribute("employee"));
 
         //进行更新
         employeeService.updateById(employee);
 
         return R.success("员工信息修改成功");
+    }
+
+    /**
+     * 根据id查询员工信息
+     * 使用路径变量获取id
+     * @param id
+     * @return
+     */
+    @GetMapping("/{id}")
+    public R<Employee> getById(@PathVariable Long id){
+        log.info("根据id查询员工信息，获取到的id为{}",id);
+        Employee employee = employeeService.getById(id);
+        //如果查出来的employee是空，返回错误信息
+        if (Objects.isNull(employee)){
+            return R.error("没有查询到对应的一个信息");
+        }
+        return R.success(employee);
     }
 
 }
