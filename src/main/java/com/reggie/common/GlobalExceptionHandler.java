@@ -32,7 +32,7 @@ public class GlobalExceptionHandler {
         //首先判断异常信息中是否有Duplicate entry关键字信息，因为出现异常不一定都是双重输入重复异常
         if (exception.getMessage().contains("Duplicate entry")){
             //这个时候肯定是用户名重复了
-            //我们提取出重复的用户名，使用空格分割
+            //我们提取出重复的用户名和菜品套餐，使用空格分割
             String[] split = exception.getMessage().split(" ");
             String msg = split[2] + "已存在";
             //返回错误信息
