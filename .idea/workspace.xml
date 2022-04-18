@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f253bc7-2d86-4ee5-a967-aa0f2a69f948" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/reggie/controller/CategoryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/reggie/entity/Category.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/reggie/mapper/CategoryMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/reggie/service/CategoryService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/reggie/service/impl/CategoryServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/reggie/common/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reggie/common/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reggie/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reggie/controller/CategoryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/瑞吉外卖项目.md" beforeDir="false" afterPath="$PROJECT_DIR$/瑞吉外卖项目.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -98,7 +93,8 @@
       <workItem from="1650118775911" duration="93000" />
       <workItem from="1650172675216" duration="11345000" />
       <workItem from="1650190528027" duration="626000" />
-      <workItem from="1650272265073" duration="4361000" />
+      <workItem from="1650272265073" duration="8498000" />
+      <workItem from="1650291476864" duration="17000" />
     </task>
     <servers />
   </component>

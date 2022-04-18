@@ -31,6 +31,12 @@ public class CategoryController {
         return R.success("新增分类成功");
     }
 
+    /**
+     * 分页查询
+     * @param page
+     * @param pageSize
+     * @return
+     */
     @GetMapping("/page")
     public R<Page> page(int page,int pageSize){
         //分页构造器
