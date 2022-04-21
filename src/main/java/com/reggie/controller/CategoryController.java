@@ -60,7 +60,9 @@ public class CategoryController {
     public R<String> deleteById(Long ids){
         log.info("删除的ids为{}",ids);
 
+        //普通的删除方法
 //        categoryService.removeById(ids);
+        //自定义的删除，在删除前先查询分类是否关联了菜品和套餐
         categoryService.remove(ids);
         return R.success("删除成功!");
     }

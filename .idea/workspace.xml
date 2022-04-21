@@ -5,20 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f253bc7-2d86-4ee5-a967-aa0f2a69f948" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/reggie/common/CustomException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/reggie/entity/Dish.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/reggie/entity/Setmeal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/reggie/mapper/DishMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/reggie/mapper/SetmealMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/reggie/service/DishService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/reggie/service/SetmealService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/reggie/service/impl/DishServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/reggie/service/impl/SetmealServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/backend/page/demo/upload.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/reggie/common/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reggie/common/GlobalExceptionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/reggie/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reggie/controller/CategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/reggie/service/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reggie/service/CategoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/reggie/service/impl/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reggie/service/impl/CategoryServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/瑞吉外卖项目.md" beforeDir="false" afterPath="$PROJECT_DIR$/瑞吉外卖项目.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,7 +55,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/reggie/entity" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/backend/page/demo" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="模块" />
     <property name="project.structure.proportion" value="0.15" />
@@ -75,6 +65,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/backend/page/demo" />
       <recent name="$PROJECT_DIR$/src/main/java/com/reggie/entity" />
       <recent name="$PROJECT_DIR$/src/main/java/com/reggie/common" />
     </key>
@@ -109,7 +100,8 @@
       <workItem from="1650291476864" duration="527000" />
       <workItem from="1650292094772" duration="157000" />
       <workItem from="1650337555322" duration="2241000" />
-      <workItem from="1650519897861" duration="3549000" />
+      <workItem from="1650519897861" duration="4490000" />
+      <workItem from="1650537978309" duration="3144000" />
     </task>
     <servers />
   </component>
