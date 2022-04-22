@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f253bc7-2d86-4ee5-a967-aa0f2a69f948" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/backend/page/demo/upload.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/reggie/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reggie/controller/CategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/瑞吉外卖项目.md" beforeDir="false" afterPath="$PROJECT_DIR$/瑞吉外卖项目.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +97,8 @@
       <workItem from="1650292094772" duration="157000" />
       <workItem from="1650337555322" duration="2241000" />
       <workItem from="1650519897861" duration="4490000" />
-      <workItem from="1650537978309" duration="3144000" />
+      <workItem from="1650537978309" duration="3479000" />
+      <workItem from="1650548022977" duration="1303000" />
     </task>
     <servers />
   </component>
