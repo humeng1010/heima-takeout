@@ -23,3 +23,8 @@ mybatis-plus:
     db-config:
       # 配置id
       id-type: ASSIGN_ID
+
+# 自定义项目配置
+reggie:
+  # 上传路径
+  path: /Users/humeng
