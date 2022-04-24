@@ -27,4 +27,4 @@ mybatis-plus:
 # 自定义项目配置
 reggie:
   # 上传路径
-  path: /Users/humeng
+  path: /Users/humeng/img/
