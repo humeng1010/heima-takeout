@@ -1,6 +1,8 @@
 package com.reggie.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.reggie.common.R;
 import com.reggie.dto.DishDto;
@@ -14,6 +16,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -146,7 +149,7 @@ public class DishController {
      * @param ids
      * @return
      */
-    @DeleteMapping
+//    @DeleteMapping
     public R<String> deleteById(Long ids){
         log.info("需要删除的id为{}",ids);
         dishService.removeById(ids);
@@ -154,5 +157,52 @@ public class DishController {
         return R.success("删除成功");
     }
 
+    /**
+     * 根据id批量删除菜品
+     * @param ids
+     * @return
+     */
+    @DeleteMapping
+    public R<String> deleteByIds(Long[] ids){
+        log.info("需要删除的id为{}", Arrays.toString(ids));
+//        dishService.removeById(ids);
+        dishService.removeByIds(Arrays.asList(ids));
+        return R.success("删除成功");
+    }
+
+    /**
+     * 停售and批量停售
+     * @param ids
+     * @return
+     */
+    @PostMapping("/status/0")
+    public R<String> stop(Long[] ids){
+        log.info(Arrays.toString(ids));
+//        Dish dish = dishService.getById(ids);
+//        Integer status = dish.getStatus();
+        for (Long id : ids) {
+            Dish dish = dishService.getById(id);
+            dish.setStatus(0);
+            dishService.updateById(dish);
+        }
+        return R.success("停售成功");
+    }
+
+    /**
+     * 启售and批量启售
+     * @param ids
+     * @return
+     */
+    @PostMapping("/status/1")
+    public R<String> turnOn(Long[] ids){
+        log.info(Arrays.toString(ids));
+//        Dish dish = dishService.getById(ids);
+        for (Long id : ids) {
+            Dish dish = dishService.getById(id);
+            dish.setStatus(1);
+            dishService.updateById(dish);
+        }
+        return R.success("启售成功");
+    }
 }
 
