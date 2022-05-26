@@ -95,7 +95,7 @@ public class SetmealController {
     }
 
     /**
-     * 删除套餐
+     * 删除套餐 同时删除套餐和菜品的关联数据
      * @param ids
      * @return
      */
@@ -103,7 +103,9 @@ public class SetmealController {
     public R<String> delete(@RequestParam("ids") List<Long> ids){
         log.info("ids{}",ids);
 
-        return null;
+        setmealService.removeWithDish(ids);
+
+        return R.success("套餐数据删除成功!");
     }
 
 

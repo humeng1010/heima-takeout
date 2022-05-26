@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3f253bc7-2d86-4ee5-a967-aa0f2a69f948" name="变更" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/reggie/controller/DishController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reggie/controller/DishController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/reggie/controller/SetmealController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reggie/controller/SetmealController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reggie/filter/LoginCheckFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reggie/filter/LoginCheckFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/reggie/service/SetmealService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reggie/service/SetmealService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/reggie/service/impl/SetmealServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reggie/service/impl/SetmealServiceImpl.java" afterDir="false" />
     </list>
@@ -141,7 +141,8 @@
       <workItem from="1651753360535" duration="247000" />
       <workItem from="1652500965562" duration="357000" />
       <workItem from="1652758080123" duration="113000" />
-      <workItem from="1653481264723" duration="5142000" />
+      <workItem from="1653481264723" duration="5277000" />
+      <workItem from="1653535086311" duration="1942000" />
     </task>
     <servers />
   </component>
